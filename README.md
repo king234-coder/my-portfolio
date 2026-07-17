@@ -21,6 +21,6 @@ This is my personal portfolio website built using HTML, CSS, and JavaScript.
 - resume.pdf
 
 ## 🌍 Live Demo
-](https://github.com/king234-coder/my-portfolio.git)
+(https://github.com/king234-coder/my-portfolio.git)
 ## 👨‍💻 Author
 Muhammad Salman Tahir
