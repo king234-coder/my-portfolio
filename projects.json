@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Calculator App",
+    "description": "A simple calculator using HTML, CSS, JS",
+    "link": "#"
+  },
+  {
+    "title": "Music Player",
+    "description": "Custom music player with playlist",
+    "link": "#"
+  },
+  {
+    "title": "Portfolio Website",
+    "description": "My personal portfolio website",
+    "link": "#"
+  }
+]
