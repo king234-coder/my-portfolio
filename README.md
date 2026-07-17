@@ -9,7 +9,6 @@ Responsive design
  Smooth UI
 
 ## Live Demo
-https://yourusername.github.io/my-portfolio/
-
+](https://github.com/king234-coder/my-portfolio.git)
 ## Author
 Muhammad Salman Tahir
