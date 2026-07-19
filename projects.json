@@ -2,16 +2,16 @@
   {
     "title": "Calculator App",
     "description": "A simple calculator using HTML, CSS, JS",
-    "link": "#"
+    "link": "https://github.com/king234-coder/calculator-app.git"
   },
   {
     "title": "Music Player",
     "description": "Custom music player with playlist",
-    "link": "#"
+    "link": "https://github.com/king234-coder/music-player-app.git"
   },
   {
     "title": "Portfolio Website",
     "description": "My personal portfolio website",
-    "link": "#"
+    "link": "https://github.com/king234-coder/my-portfolio.git"
   }
 ]
