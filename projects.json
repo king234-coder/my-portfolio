@@ -2,26 +2,26 @@
   {
     "title": "Calculator App",
     "description": "A simple calculator using HTML, CSS, JS",
-    "link": "https://github.com/king234-coder/calculator-app.git"
+    "link": "https://numberlab.netlify.app/"
   },
   {
     "title": "Music Player",
     "description": "Custom music player with playlist",
-    "link": "https://github.com/king234-coder/music-player-app.git"
+    "link": "https://neonrythm.netlify.app/"
   },
   {
     "title": "Portfolio Website",
     "description": "My personal portfolio website",
-    "link": "https://github.com/king234-coder/my-portfolio.git"
+    "link": "https://codebysalman.netlify.app/"
   },
   {
     "title": "Quran Website",
     "description": "Quran Website Template",
-    "link": "https://github.com/king234-coder/my-portfolio.git"
+    "link": "https://github.com/king234-coder/ahsan-ul-uloom-website.git"
   },
   {
     "title": "Daily Learning Dashboard",
     "description": "Dashboard to track daily work progess",
-    "link": "https://github.com/king234-coder/my-portfolio.git"
+    "link": "https://github.com/king234-coder/"
   }
 ]
