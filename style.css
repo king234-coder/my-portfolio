@@ -227,6 +227,8 @@ footer {
     font-size: 24px;
   }
 }
+
+/* SKILLS SECTION */
 .skills {
   padding: 60px 20px;
   text-align: left;
@@ -236,28 +238,35 @@ footer {
   margin-bottom: 25px;
 }
 
+/* CONTAINER */
 .skills-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
 }
 
+/* 🔥  SKILLS  */
 .skills-container span {
-  padding: 8px 14px;
-  border-radius: 20px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  background: var(--skill-bg);
-  transition: 0.3s;
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  background: #1e293b;
+  color: #00bcd4;
+  border: 1px solid rgba(0,188,212,0.3);
+  transition: all 0.3s ease;
   cursor: default;
 }
 
-/* hover effect */
+/* 🔥 HOVER */
 .skills-container span:hover {
-  transform: scale(1.05);
-  border-color: #007bff;
+  background: #00bcd4;
+  color: black;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 10px rgba(0,188,212,0.6);
 }
+
+/* ACTIVE NAV */
 .nav-links a.active {
   color: cyan;
   border-bottom: 2px solid cyan;

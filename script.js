@@ -1,10 +1,15 @@
+
 // ===============================
 // LOAD PROJECTS FROM JSON
 // ===============================
 fetch("projects.json")
   .then(res => res.json())
   .then(data => {
+
     const container = document.getElementById("projects-container");
+
+    // 🔥 prevent duplicate render
+    container.innerHTML = "";
 
     data.forEach(project => {
       container.innerHTML += `
@@ -15,15 +20,18 @@ fetch("projects.json")
         </div>
       `;
     });
+
   })
-  .catch(err => console.log(err));
+  .catch(err => console.log("Project Load Error:", err));
 
 
 // ===============================
-// EMAILJS SETUP
+// EMAILJS SAFE INIT
 // ===============================
 (function(){
-  emailjs.init("h0P7aOoSzMjcF2P4O");
+  if (typeof emailjs !== "undefined") {
+    emailjs.init("h0P7aOoSzMjcF2P4O");
+  }
 })();
 
 
@@ -42,8 +50,14 @@ document.getElementById("contactForm")
   };
 
   emailjs.send("service_7hyh6zu", "template_dinba4t", params)
-    .then(() => alert("Message Sent Successfully ✅"))
+    .then(() => {
+      alert("Message Sent Successfully ✅");
+
+      // 🔥 reset form
+      document.getElementById("contactForm").reset();
+    })
     .catch(() => alert("Error Sending Message ❌"));
+
 });
 
 
@@ -74,6 +88,7 @@ const delayBetween = 1500;
 function typeEffect() {
 
   if (!isWelcomeDone) {
+
     if (!isDeleting && j <= welcomeText.length) {
       textElement.innerHTML = welcomeText.substring(0, j++);
       setTimeout(typeEffect, typingSpeed);
@@ -92,9 +107,9 @@ function typeEffect() {
 
       setTimeout(typeEffect, delayBetween);
     }
-  }
 
-  else {
+  } else {
+
     let fullText = roles[i];
 
     if (!isDeleting && j <= fullText.length) {
@@ -114,32 +129,37 @@ function typeEffect() {
 
       setTimeout(typeEffect, delayBetween);
     }
+
   }
 }
 
+// 🔥 start typing
 typeEffect();
+
+
 // ===============================
-// ACTIVE NAV LINK ON SCROLL
+// ACTIVE NAV LINK (OPTIMIZED)
 // ===============================
 const sections = document.querySelectorAll("section, header");
 const navLinks = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", () => {
+
   let current = "";
 
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 150;
+    const sectionTop = section.offsetTop - 120;
 
     if (window.scrollY >= sectionTop) {
-      current = section.getAttribute("id");
+      current = section.id;
     }
   });
 
   navLinks.forEach(link => {
-    link.classList.remove("active");
-
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
+    link.classList.toggle(
+      "active",
+      link.getAttribute("href") === "#" + current
+    );
   });
+
 });
