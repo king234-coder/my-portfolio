@@ -1,27 +1,31 @@
 [
   {
     "title": "Calculator App",
-    "description": "A simple calculator using HTML, CSS, JS",
+    "description": "A modern calculator built using HTML, CSS and JavaScript with responsive design.",
     "link": "https://numberlab.netlify.app/"
   },
+
   {
     "title": "Music Player",
-    "description": "Custom music player with playlist",
+    "description": "Custom music player with playlist, controls and modern UI design.",
     "link": "https://neonrythm.netlify.app/"
   },
+
   {
     "title": "Portfolio Website",
-    "description": "My personal portfolio website",
+    "description": "Personal developer portfolio website with responsive layout and dynamic projects.",
     "link": "https://codebysalman.netlify.app/"
   },
+
   {
     "title": "Quran Website",
-    "description": "Quran Website Template",
+    "description": "Quran website template designed with clean and user friendly interface.",
     "link": "https://github.com/king234-coder/ahsan-ul-uloom-website.git"
   },
+
   {
     "title": "Daily Learning Dashboard",
-    "description": "Dashboard to track daily work progess",
+    "description": "Dashboard to track daily tasks, learning progress and productivity.",
     "link": "https://github.com/king234-coder/"
   }
 ]
