@@ -338,6 +338,7 @@ footer{
 
 
 /* MOBILE */
+/* MOBILE */
 
 @media(max-width:700px){
 
@@ -373,6 +374,19 @@ footer{
     font-size:32px;
 }
 
+/* ✅ FIX: Hero buttons spacing */
+.hero-buttons{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.hero-buttons .btn{
+    margin:10px 0;
+    width:80%;
+    text-align:center;
+}
+
 .hero-image{
     margin-top:50px;
 }
@@ -398,4 +412,4 @@ footer{
     width:100%;
 }
 
-}
+} 
