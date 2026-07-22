@@ -1,17 +1,18 @@
-
 // ===============================
 // LOAD PROJECTS FROM JSON
 // ===============================
+
 fetch("projects.json")
   .then(res => res.json())
   .then(data => {
 
     const container = document.getElementById("projects-container");
 
-    // 🔥 prevent duplicate render
+    // Prevent duplicate render
     container.innerHTML = "";
 
     data.forEach(project => {
+
       container.innerHTML += `
         <div class="project-card">
           <h3>${project.title}</h3>
@@ -19,44 +20,62 @@ fetch("projects.json")
           <a href="${project.link}" target="_blank">View Project</a>
         </div>
       `;
+
     });
 
   })
-  .catch(err => console.log("Project Load Error:", err));
+  .catch(err => console.log("Project Load Error:",err));
 
 
 // ===============================
 // EMAILJS SAFE INIT
 // ===============================
+
 (function(){
-  if (typeof emailjs !== "undefined") {
+
+  if(typeof emailjs !== "undefined"){
+
     emailjs.init("h0P7aOoSzMjcF2P4O");
+
   }
+
 })();
 
 
 // ===============================
 // CONTACT FORM
 // ===============================
+
 document.getElementById("contactForm")
-.addEventListener("submit", function(e){
+.addEventListener("submit",function(e){
 
   e.preventDefault();
 
-  const params = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    message: document.getElementById("message").value
+  const params={
+
+    name:document.getElementById("name").value,
+    email:document.getElementById("email").value,
+    message:document.getElementById("message").value
+
   };
 
-  emailjs.send("service_7hyh6zu", "template_dinba4t", params)
-    .then(() => {
-      alert("Message Sent Successfully ✅");
 
-      // 🔥 reset form
-      document.getElementById("contactForm").reset();
-    })
-    .catch(() => alert("Error Sending Message ❌"));
+  emailjs.send("service_7hyh6zu","template_dinba4t",params)
+
+  .then(()=>{
+
+    alert("Message Sent Successfully ✅");
+
+    // Reset form
+    document.getElementById("contactForm").reset();
+
+  })
+
+  .catch(()=>{
+
+    alert("Error Sending Message ❌");
+
+  });
 
 });
 
@@ -64,9 +83,10 @@ document.getElementById("contactForm")
 // ===============================
 // TYPING EFFECT
 // ===============================
-const textElement = document.getElementById("typing");
 
-const roles = [
+const textElement=document.getElementById("typing");
+
+const roles=[
   "Frontend Web Developer",
   "SEO Engineer",
   "Graphic Designer",
@@ -74,92 +94,153 @@ const roles = [
   "UI/UX Web Flow"
 ];
 
-let i = 0;
-let j = 0;
-let isDeleting = false;
-let isWelcomeDone = false;
+let i=0;
+let j=0;
+let isDeleting=false;
+let isWelcomeDone=false;
 
-const welcomeText = "Welcome to my Portfolio";
+const welcomeText="Welcome to my Portfolio";
 
-const typingSpeed = 100;
-const deletingSpeed = 50;
-const delayBetween = 1500;
+const typingSpeed=100;
+const deletingSpeed=50;
+const delayBetween=1500;
 
-function typeEffect() {
 
-  if (!isWelcomeDone) {
+function typeEffect(){
 
-    if (!isDeleting && j <= welcomeText.length) {
-      textElement.innerHTML = welcomeText.substring(0, j++);
-      setTimeout(typeEffect, typingSpeed);
-    } 
-    else if (isDeleting && j >= 0) {
-      textElement.innerHTML = welcomeText.substring(0, j--);
-      setTimeout(typeEffect, deletingSpeed);
-    } 
-    else {
-      isDeleting = !isDeleting;
+  if(!isWelcomeDone){
 
-      if (!isDeleting) {
-        isWelcomeDone = true;
-        j = 0;
-      }
+    if(!isDeleting && j<=welcomeText.length){
 
-      setTimeout(typeEffect, delayBetween);
+      textElement.innerHTML=welcomeText.substring(0,j++);
+      setTimeout(typeEffect,typingSpeed);
+
     }
+    else if(isDeleting && j>=0){
 
-  } else {
+      textElement.innerHTML=welcomeText.substring(0,j--);
+      setTimeout(typeEffect,deletingSpeed);
 
-    let fullText = roles[i];
+    }
+    else{
 
-    if (!isDeleting && j <= fullText.length) {
-      textElement.innerHTML = fullText.substring(0, j++);
-      setTimeout(typeEffect, typingSpeed);
-    } 
-    else if (isDeleting && j >= 0) {
-      textElement.innerHTML = fullText.substring(0, j--);
-      setTimeout(typeEffect, deletingSpeed);
-    } 
-    else {
-      isDeleting = !isDeleting;
+      isDeleting=!isDeleting;
 
-      if (!isDeleting) {
-        i = (i + 1) % roles.length;
+      if(!isDeleting){
+
+        isWelcomeDone=true;
+        j=0;
+
       }
 
-      setTimeout(typeEffect, delayBetween);
+      setTimeout(typeEffect,delayBetween);
+
     }
 
   }
+  else{
+
+    let fullText=roles[i];
+
+    if(!isDeleting && j<=fullText.length){
+
+      textElement.innerHTML=fullText.substring(0,j++);
+      setTimeout(typeEffect,typingSpeed);
+
+    }
+    else if(isDeleting && j>=0){
+
+      textElement.innerHTML=fullText.substring(0,j--);
+      setTimeout(typeEffect,deletingSpeed);
+
+    }
+    else{
+
+      isDeleting=!isDeleting;
+
+      if(!isDeleting){
+
+        i=(i+1)%roles.length;
+
+      }
+
+      setTimeout(typeEffect,delayBetween);
+
+    }
+
+  }
+
 }
 
-// 🔥 start typing
+
+// Start Typing
 typeEffect();
 
 
 // ===============================
-// ACTIVE NAV LINK (OPTIMIZED)
+// ACTIVE NAV LINK
 // ===============================
-const sections = document.querySelectorAll("section, header");
-const navLinks = document.querySelectorAll(".nav-links a");
 
-window.addEventListener("scroll", () => {
+const sections=document.querySelectorAll("section,header");
+const navLinks=document.querySelectorAll(".nav-links a");
 
-  let current = "";
 
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
+window.addEventListener("scroll",()=>{
 
-    if (window.scrollY >= sectionTop) {
-      current = section.id;
+  let current="";
+
+
+  sections.forEach(section=>{
+
+    const sectionTop=section.offsetTop-120;
+
+    if(window.scrollY>=sectionTop){
+
+      current=section.id;
+
     }
+
   });
 
-  navLinks.forEach(link => {
+
+  navLinks.forEach(link=>{
+
     link.classList.toggle(
       "active",
-      link.getAttribute("href") === "#" + current
+      link.getAttribute("href")==="#"+current
     );
+
+  });
+
+});
+
+
+// ===============================
+// MOBILE NAVBAR MENU
+// ===============================
+
+const menuBtn=document.querySelector(".menu-btn");
+const navLinksMobile=document.querySelector(".nav-links");
+
+
+// Open / Close Menu
+
+menuBtn.addEventListener("click",()=>{
+
+  navLinksMobile.classList.toggle("active");
+
+});
+
+
+// Close Menu After Click
+
+document.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+  link.addEventListener("click",()=>{
+
+    navLinksMobile.classList.remove("active");
+
   });
 
 });
